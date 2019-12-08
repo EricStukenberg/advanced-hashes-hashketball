@@ -296,11 +296,85 @@ def big_shoe_rebounds()
 end
 
 
+#INPUT
+#...
+#OUTPUT
+#...Returns the player name with the most points scored
+def most_points_scored()
+  all_players_array = get_all_players()
+  max_points = 0
+  max_points_player_hash = Hash.new
+  len = all_players_array.length()
+  i = 0
+  while i < len
+    player = all_players_array[i]
+    points = player[:points]
+    if(points > max_points)
+        max_points = points
+        max_points_player_hash = player
+    end
+    i += 1
+  end
+  name = max_points_player_hash[:player_name]
+  return name
+end
+
+#INPUT
+#...
+#OUTPUT
+#...Returns the name of the winning team
+def winning_team()
+  home_team_hash = game_hash[:home]
+  home_players_array = home_team_hash[:players]
+  home_points = 0
+
+  away_team_hash = game_hash[:away]
+  away_players_array = away_team_hash[:players]
+  away_points = 0
+  i = 0
+  h_len = home_players_array.length()
+  a_len = away_players_array.length()
+  while i < h_len && i < a_len
+    h_player = home_players_array[i]
+    h_points = h_player[:points]
+    home_points += h_points
+    a_player = away_players_array[i]
+    a_points = a_player[:points]
+    away_points += a_points
+    i += 1
+  end
+  if(home_points > away_points)
+    name = home_team_hash[:team_name]
+    return name
+  end
+  name = name = away_team_hash[:team_name]
+  return name
+end
 
 
+#INPUT
+#...
+#OUTPUT
+#...Returns the name of the player with the longest name
+def player_with_longest_name()
+  all_players_array = get_all_players()
+  max_len = 0
+  max_name = ""
+  len = all_players_array.length()
+  i = 0
+  while i < len
+    player = all_players_array[i]
+    p_name = player[:player_name]
+    p_len = p_name.length
+    if(p_len > max_len)
+        max_len = p_len
+        max_name = p_name
+    end
+    i += 1
+  end
 
-
-
+  return max_name
+end
 
 
 
