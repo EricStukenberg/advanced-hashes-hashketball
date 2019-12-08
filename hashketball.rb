@@ -380,8 +380,7 @@ end
 #...
 #OUTPUT
 #...Returns true if the player with the longest name has the most steals
-def long_name_steals_a_ton()
-  print "\n<----------------------START------------------------------->"
+def long_name_steals_a_ton?()
   all_players_array = get_all_players()
   max_steals = 0
   max_steals_player_hash = Hash.new
@@ -396,10 +395,10 @@ def long_name_steals_a_ton()
     end
     i += 1
   end
-  max_steal_name = max_points_player_hash[:player_name]
+  max_steal_name = max_steals_player_hash[:player_name]
   longest_name = player_with_longest_name()
   print max_steal_name
-  print "\n<------------------------>\n"
+
   print longest_name
   if(max_steal_name == longest_name )
     return true
