@@ -8,10 +8,6 @@ def game_hash()
           :players => [
                                {:player_name => "Alan Anderson",
                                 :number => 0,
-=======
-          :players => {
-            "Alan Anderson" => {:number => 0,
->>>>>>> b7fa05565cb99eae0197e1d79d9b992967a80440
                                 :shoe => 16,
                                 :points => 22,
                                 :rebounds => 12,
@@ -19,7 +15,6 @@ def game_hash()
                                 :steals => 3,
                                 :blocks => 1,
                                 :slam_dunks => 1
-<<<<<<< HEAD
 
             },
                                {:player_name => "Reggie Evans",
@@ -42,190 +37,6 @@ def game_hash()
                                 :steals => 3,
                                 :blocks => 1,
                                 :slam_dunks => 15
-=======
-              
-            },
-            "Reggie Evans"  => {:number => 30,
-                                :shoe => 14, 
-                                :points => 12,
-                                :rebounds => 12,
-                                :assists => 12,
-                                :steals => 12,
-                                :blocks => 12,
-                                :slam_dunks => 7 
-              
-            },
-            "Brook Lopez"   => {:number => 11,
-                                :shoe => 17,
-                                :points => 17,
-                                :rebounds => 19,
-                                :assists => 10,
-                                :steals => 3,
-                                :blocks => 1,
-                                :slam_dunks => 15  
-              
-            },
-            "Mason Plumlee" => {:number => 1,
-                                :shoe => 19,
-                                :points => 26,
-                                :rebounds => 11,
-                                :assists => 6,
-                                :steals => 3,
-                                :blocks => 8,
-                                :slam_dunks => 5
-              
-            },
-            "Jason Terry"   => {:number => 31,
-                                :shoe => 15,
-                                :points => 19,
-                                :rebounds => 2,
-                                :assists => 2,
-                                :steals => 4,
-                                :blocks => 11,
-                                :slam_dunks => 1
-              
-            },
-
-          }
-        },
-        :away => { :team_name => " Charlotte Hornets", :colors => ["Turquoise", "Purple"],
-          :players => {
-            "Jeff Adrien" => {:number => 4,
-                              :shoe => 18,
-                              :points => 10,
-                              :rebounds => 1,
-                              :assists => 1,
-                              :steals => 2,
-                              :blocks => 7,
-                              :slam_dunks => 2
-              
-            },
-            "Bismack Biyombo" => {:number => 0,
-                                  :shoe => 16,
-                                  :points => 12,
-                                  :rebounds => 4,
-                                  :assists => 7,
-                                  :steals => 22,
-                                  :blocks => 15,
-                                  :slam_dunks => 10
-              
-            },
-            "DeSagna Diop" => {:number => 2,
-                               :shoe => 14,
-                               :points => 24,
-                               :rebounds => 12,
-                               :assists => 12,
-                               :steals => 4,
-                               :blocks => 5,
-                               :slam_dunks => 5
-              
-            },
-            "Ben Gordon" => {:number => 8,
-                             :shoe => 15,
-                             :points => 33,
-                             :rebounds => 3,
-                             :assists => 2,
-                             :steals => 1,
-                             :blocks => 1,
-                             :slam_dunks => 0
-              
-            },
-              "Kemba Walker" => {:number => 33,
-                                 :shoe => 15,
-                                 :points => 6,
-                                 :rebounds => 12,
-                                 :assists => 12,
-                                 :steals => 7,
-                                 :blocks => 5,
-                                 :slam_dunks => 12
-              
-            },
-          }
-        }
-               
-  }
-  
-  return hash
-end 
-
-#INPUT
-#...Takes a team name (home or aways)
-#OUTPUT
-#...Returns a team hash
-def get_team(team_name)
- hash = game_hash
- if(team_name == "home")
-    team_hash = hash[:home]
-    return team_hash
- end
-
- team_hash = hash[:away]
- return team_hash
-end
-
-#INPUT
-#...Takes a players hash
-#OUTPUT
-#...Returns a players hash
-def get_player(players_hash, name)
-  hash = Hash.new
-  players_hash.each do |player| 
-
-     if(player.include?(name))
-        hash = player
-        print"\n<------------------------------------->\n"
-        print hash
-        print"\n<---------------RETURNING---------------------->\n"
-        return hash
-     end
-  end
-end
-
-#INPUT
-#...Takes a players hash
-#OUTPUT
-#...Returns a players hash
-def get_all_players()
-  
-  
-  hash = game_hash
-  home_team_hash = hash[:home]
-  away_team_hash = hash[:away]
-  
-  home_players_array = home_team_hash[:players]
-  away_players_array = away_team_hash[:players]
-  print home_players_array
-  print print"\n<------------------------------------->\n"
-  print away_players_array
-  all_players_array = home_players_array.concat(away_players_array)
-  print print"\n<------------------------------------->\n"
-  print all_players_array
-  return all_players_array
-end
-
-
-#INPUT
-#...Takes a string of the players name 
-#OUTPUT
-#...Returns the points that player scored
-def num_points_scored(name)
-  name = name
-  all_players_array = get_all_players()
-
-  single_player_hash = get_player(all_players_hash, name)
-  print"\n<------------------------------------->\n"
-  print single_player_hash
-  print"\n<---------------DONE LETS ASSIGN POINTS---------------------->\n"
-  print single_player_hash[:name]
-  points = single_player_hash[name][:points]
-  print"\n<------------------------------------->\n"
-  print "POINTS = "
-  print points
-  print"\n<------------------------------------->\n"
-  return points
-  
-end 
->>>>>>> b7fa05565cb99eae0197e1d79d9b992967a80440
 
             },
                                {:player_name => "Mason Plumlee",
